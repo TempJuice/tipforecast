@@ -1,6 +1,8 @@
 # Name of Project
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+TipForecast is the culmination of the skills I acquired as a Prime Digital Academy graduate. A final display/evaluation of me applying what I learned over 12 weeks of drinking code material from a educational fire hydrant :bowtie:
+
+Link to the live version of the app if it's hosted on Heroku.
 
 ## Built With
 
@@ -40,10 +42,14 @@ Link to a read-only version of your scope document or other relevant documentati
 
 ### Completed Features
 
-High level list of items completed.
+- [x] Register a new user, login, and logout pages all operational
+- [ ] Local SQL Database built for data storage. Able to enter items on Cash Flow Items page and see them populate in their respective lists
+- [ ] Cash Flow Summary Page displaying the calculated totals from user inputs
+- [ ] Cash Flow Summary Page displays calendar with user inputs 
+- [ ] Beautification
+- [ ] Extend parameters to display a full month worth of data
+- [ ] Deployment
 
-- [x] Feature a
-- [x] Feature b
 
 ### Next Steps
 

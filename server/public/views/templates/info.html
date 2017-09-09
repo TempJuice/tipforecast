@@ -1,6 +1,25 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
   <p>
-    In Info
+    Cash Flow Items
   </p>
+
+  <form ng-submit="ic.newIncomeItem(ic.userService.userObject)">
+    <div>
+      <label for="username">Date:</label>
+      <input type="string" ng-model="ic.userService.userObject.date"/>
+    </div>
+    <div>
+      <label for="password">Type:</label>
+      <input type="string" ng-model="ic.userService.userObject.type"/>
+    </div>
+    <div>
+      <label for="password">Amount:</label>
+      <input type="number" ng-model="ic.userService.userObject.amount"/>
+    </div>
+    <div>
+      <input class="btn btn-default" type="submit" name="submit" value="Add" />
+
+  
+  {{ic}}
 </div>
