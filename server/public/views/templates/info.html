@@ -5,16 +5,20 @@
   </p>
 
   <form ng-submit="ic.newIncomeItem(ic.userService.userObject)">
+    <select ng-model="ic.userService.userObject.type">
+    <option value="income">Income</option>
+    <option value="expenditure">Expenditure</option>
+</select>
     <div>
       <label for="username">Date:</label>
-      <input type="string" ng-model="ic.userService.userObject.date"/>
+      <input type="number" ng-model="ic.userService.userObject.date"/>
     </div>
     <div>
-      <label for="password">Type:</label>
-      <input type="string" ng-model="ic.userService.userObject.type"/>
+      <label for="description">Description:</label>
+      <input type="string" ng-model="ic.userService.userObject.description"/>
     </div>
     <div>
-      <label for="password">Amount:</label>
+      <label for="amount">Amount:</label>
       <input type="number" ng-model="ic.userService.userObject.amount"/>
     </div>
     <div>
