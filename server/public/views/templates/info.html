@@ -11,19 +11,36 @@
 </select>
     <div>
       <label for="username">Date:</label>
-      <input type="number" ng-model="ic.userService.userObject.date"/>
+      <input type="number" ng-model="ic.userService.userObject.date" />
     </div>
     <div>
       <label for="description">Description:</label>
-      <input type="string" ng-model="ic.userService.userObject.description"/>
+      <input type="string" ng-model="ic.userService.userObject.description" />
     </div>
     <div>
       <label for="amount">Amount:</label>
-      <input type="number" ng-model="ic.userService.userObject.amount"/>
+      <input type="number" ng-model="ic.userService.userObject.amount" />
     </div>
     <div>
       <input class="btn btn-default" type="submit" name="submit" value="Add" />
 
-  
-  {{ic}}
-</div>
+      <div>
+        <h3>Income Items</h3>
+        <p ng-repeat="income in ic.transactionArray.transactionArray | filter: 'income'">
+          {{income.date}} {{income.description}} {{income.amount}}
+          <button>Delete</button>
+        </p>
+        <!-- {{ic.transactionArray.transactionArray}} -->
+      </div>
+
+      <div>
+        <h3>Expenditure Items</h3>
+        <p ng-repeat="expenditure in ic.transactionArray.transactionArray | filter: 'expenditure'">
+          {{expenditure.date}} {{expenditure.description}} {{expenditure.amount}}
+          <button>Delete</button>
+        </p>
+        <!-- {{ic.transactionArray.transactionArray}} -->
+      </div>
+
+
+    </div>

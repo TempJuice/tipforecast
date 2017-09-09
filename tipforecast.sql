@@ -7,17 +7,24 @@ CREATE TABLE users (
 CREATE TABLE transactions (
 	id SERIAL PRIMARY KEY,
 	username VARCHAR(25),
-	type VARCHAR(12),
+	type VARCHAR(25),
 	date INT,
 	description VARCHAR (40),
 	amount INT
 );
+
+SELECT * FROM transactions 
+WHERE username='ryan';
 
 
 DROP TABLE transactions;
 
 INSERT INTO transactions (username, type, date, description, amount)
 VALUES ($1, $2, $3, $4, $5);
+
+INSERT INTO transactions (type)
+VALUES (income);
+
 
 
 ALTER TABLE users

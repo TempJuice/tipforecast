@@ -43,7 +43,7 @@ Link to a read-only version of your scope document or other relevant documentati
 ### Completed Features
 
 - [x] Register a new user, login, and logout pages all operational
-- [ ] Local SQL Database built for data storage. Able to enter items on Cash Flow Items page and see them populate in their respective lists
+- [x] Local SQL Database built. Able to enter transactions on Cash Flow Items page and see them populate in their respective lists
 - [ ] Cash Flow Summary Page displaying the calculated totals from user inputs
 - [ ] Cash Flow Summary Page displays calendar with user inputs 
 - [ ] Beautification
