@@ -4,7 +4,7 @@
     Cash Flow Items
   </p>
 
-  <form ng-submit="ic.newTransaction(ic.userService.userObject)">
+  <form ng-submit="ic.addTransaction(ic.userService.userObject)">
     <select ng-model="ic.userService.userObject.type">
     <option value="income">Income</option>
     <option value="expenditure">Expenditure</option>
@@ -23,12 +23,13 @@
     </div>
     <div>
       <input class="btn btn-default" type="submit" name="submit" value="Add" />
+      {{ic.userService}}
 
       <div>
         <h3>Income Items</h3>
         <p ng-repeat="income in ic.transactionArray.transactionArray | filter: 'income'">
-          {{income.date}} {{income.description}} {{income.amount}}
-          <button ng-click="ic.deleteTransaction()">Delete</button>
+          {{income.id}} {{income.date | date : "fullDate"}} {{income.description}} {{income.amount}}
+          <button ng-click="ic.deleteTransaction(income.id)">Delete</button>
         </p>
         <!-- {{ic.transactionArray.transactionArray}} -->
       </div>
@@ -36,8 +37,8 @@
       <div>
         <h3>Expenditure Items</h3>
         <p ng-repeat="expenditure in ic.transactionArray.transactionArray | filter: 'expenditure'">
-          {{expenditure.date}} {{expenditure.description}} {{expenditure.amount}}
-          <button>Delete</button>
+           {{expenditure.id}} {{expenditure.date | date : "fullDate"}} {{expenditure.description}} {{expenditure.amount}}
+          <button ng-click="ic.deleteTransaction(expenditure.id)">Delete</button>
         </p>
         <!-- {{ic.transactionArray.transactionArray}} -->
       </div>

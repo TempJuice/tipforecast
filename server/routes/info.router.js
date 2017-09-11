@@ -56,26 +56,27 @@ router.get('/', function (req, res) {
     });//end of pool.connect   
 });//end of router.get
 
-router.delete('/', function (req, res) {
-    // console.log('Info get route was hit server side :');
-    // console.log('get user is: ', req.user);
+router.delete('/:id', function (req, res) {
+    console.log('Info delete route was hit server side :');
+    console.log('Delete button req.params is: ', req.params);
+    var transactionId = req.params.id;
     pool.connect(function (err, client, done) {
         if (err) {
             console.log("Error connecting: ", err);
             res.sendStatus(500);
         }
-        client.query("DELETE FROM transactions WHERE username = $1;",
-            [req.user.username],
+        client.query("DELETE FROM transactions WHERE id = $1;",
+            [transactionId],
             function (err, result) {
                 done();
                 if (err) {
                     console.log("Error selecting data: ", err);
                     res.sendStatus(500);
                 } else {
-                    res.send(result.rows);
+                    res.sendStatus(200);
                 }
             });//end of error handling for DB query
     });//end of pool.connect   
-});//end of router.get
+});//end of router.delete
 
 module.exports = router;
