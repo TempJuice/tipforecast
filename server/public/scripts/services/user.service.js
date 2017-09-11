@@ -8,23 +8,28 @@ self=this;
     userObject: userObject,
     transactionArray: transactionsObject,
 
-    addItem: function (newIncomeItem) {
+    addTransaction: function (newTransaction) {
       // console.log('add item function was initiated');
-      $http.post('/info', newIncomeItem).then(function (response) {
-        console.log('Transaction post route brought back: ', response);
-        // getTransactions();
+      $http.post('/info', newTransaction).then(function (response) {
+        // console.log('Transaction post route brought back: ', response);
+        // userObject.getTransactions();
       })//end of post success function      
     },//end of additem function
     
     getTransactions: function () {
-      console.log('Get Transactions function was triggered');
+      // console.log('Get Transactions function was triggered');
       $http.get('/info').then(function (response) {
-        console.log('Transactions get route brought back: ', response);
+        // console.log('Transactions get route brought back: ', response);
         transactionsObject.transactionArray = response.data;
       })//end of get success function
     },//end of getTransactions function
 
-    
+    deleteTransaction: function () {
+      // console.log('Get Transactions function was triggered');
+      $http.delete('/info').then(function (response) {
+        // console.log('Transactions get route brought back: ', response);
+      })//end of get success function
+    },//end of getTransactions function
 
     getuser: function () {
       // console.log('UserService -- getuser');

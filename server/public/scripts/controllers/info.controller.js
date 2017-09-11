@@ -4,9 +4,13 @@ myApp.controller('InfoController', function (UserService) {
   vm.userService = UserService;
   vm.transactionArray = UserService.transactionArray;
 
-  vm.newIncomeItem = function (newIncomeItem) {
-    UserService.addItem(newIncomeItem);
+  vm.newTransaction = function (newTransaction) {
+    UserService.addTransaction(newTransaction);
     UserService.getTransactions();
+  }
+
+  vm.deleteTransaction = function () {
+    UserService.deleteTransaction();
   }
 
   UserService.getTransactions();

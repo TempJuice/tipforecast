@@ -4,14 +4,14 @@
     Cash Flow Items
   </p>
 
-  <form ng-submit="ic.newIncomeItem(ic.userService.userObject)">
+  <form ng-submit="ic.newTransaction(ic.userService.userObject)">
     <select ng-model="ic.userService.userObject.type">
     <option value="income">Income</option>
     <option value="expenditure">Expenditure</option>
 </select>
     <div>
       <label for="username">Date:</label>
-      <input type="number" ng-model="ic.userService.userObject.date" />
+      <input type="date" ng-model="ic.userService.userObject.date" />
     </div>
     <div>
       <label for="description">Description:</label>
@@ -28,7 +28,7 @@
         <h3>Income Items</h3>
         <p ng-repeat="income in ic.transactionArray.transactionArray | filter: 'income'">
           {{income.date}} {{income.description}} {{income.amount}}
-          <button>Delete</button>
+          <button ng-click="ic.deleteTransaction()">Delete</button>
         </p>
         <!-- {{ic.transactionArray.transactionArray}} -->
       </div>

@@ -13,6 +13,16 @@ CREATE TABLE transactions (
 	amount INT
 );
 
+-- Where Canin told me about using INT for the date
+CREATE TABLE transactions (
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(25),
+	type VARCHAR(25),
+	date INT,
+	description VARCHAR (40),
+	amount INT
+);
+
 SELECT * FROM transactions 
 WHERE username='ryan';
 
