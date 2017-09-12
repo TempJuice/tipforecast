@@ -23,11 +23,12 @@
     </div>
     <div>
       <input class="btn btn-default" type="submit" name="submit" value="Add" />
-      {{ic.userService}}
+      <!-- {{ic.userService}} -->
+      {{ic.transactionArray.list}}
 
       <div>
         <h3>Income Items</h3>
-        <p ng-repeat="income in ic.transactionArray.transactionArray | filter: 'income'">
+        <p ng-repeat="income in ic.transactionArray.list| filter: 'income'">
           {{income.id}} {{income.date | date : "fullDate"}} {{income.description}} {{income.amount}}
           <button ng-click="ic.deleteTransaction(income.id)">Delete</button>
         </p>
@@ -36,7 +37,7 @@
 
       <div>
         <h3>Expenditure Items</h3>
-        <p ng-repeat="expenditure in ic.transactionArray.transactionArray | filter: 'expenditure'">
+        <p ng-repeat="expenditure in ic.transactionArray.list | filter: 'expenditure'">
            {{expenditure.id}} {{expenditure.date | date : "fullDate"}} {{expenditure.description}} {{expenditure.amount}}
           <button ng-click="ic.deleteTransaction(expenditure.id)">Delete</button>
         </p>
