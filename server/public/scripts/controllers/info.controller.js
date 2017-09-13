@@ -1,19 +1,28 @@
 myApp.controller('InfoController', function (UserService, TransactionService) {
   console.log('InfoController created');
   var vm = this;
-  // vm.userService = UserService;
-  // vm.transactionService = TransactionService;
+
+  
+  vm.userObject = UserService.userObject
+  // console.log('Controller userObject: ', vm.userObject);
+  
   vm.transactionArray = TransactionService.transactionsObject;
 
-  // vm.addTransaction = function (newTransaction) {
-  //   UserService.addTransaction(newTransaction);
-  //   // vm.userService.userObject = {}
-  //   UserService.getTransactions();
-  // }
+  vm.addTransaction = function (newTransaction) {
+    TransactionService.addTransaction(newTransaction);
+    // console.log('controller add function hit');   
+  }
 
-  // vm.deleteTransaction = function (transactionId) {
-  //   UserService.deleteTransaction(transactionId);
-  // }
+  vm.updateTransaction = function (updatedTransaction) {
+    // console.log('controller update function hit');
+    // console.log('updatedTransaction is: ', updatedTransaction);
+    
+    TransactionService.updateTransaction(updatedTransaction);
+  }
+
+  vm.deleteTransaction = function (transactionId) {
+    TransactionService.deleteTransaction(transactionId);
+  }
 
   TransactionService.getTransactions();
 
