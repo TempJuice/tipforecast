@@ -23,17 +23,15 @@
     </div>
     <div>
       <input class="btn btn-default" type="submit" name="submit" value="Add" />
-      <!-- {{ic.userService}} -->
-      {{ic.userObject}}
-      <!-- {{ic.transactionArray.list}} -->
     </div>
   </form>
-  <!-- ic.updateTransaction(income) -->
+  {{ic.userObject.date}}
+ 
   <div>
     <h3>Income Items</h3>
     <ul ng-repeat="income in ic.transactionArray.list| filter: 'income'">
       <li>
-        <span ng-hide="editing" ng-click="editing = true">{{income.date | date : "fullDate"}} {{income.description}} {{income.amount}}</span>
+        <span ng-hide="editing" ng-click="editing = true">{{income.date | date : fullDate}} {{income.description}} {{income.amount}}</span>
         <form ng-show="editing" ng-submit="editing = false; ic.updateTransaction(income)">
           <label>Date:</label>
           <input type="date" ng-model="income.date" placeholder="Date" />
@@ -47,19 +45,29 @@
 
       </li>
       <button ng-click="ic.deleteTransaction(income.id)">Delete</button>
-      <li>
-        {{income}}
-      </li>
     </ul>
     <!-- {{ic.transactionArray.transactionArray}} -->
   </div>
 
   <div>
     <h3>Expenditure Items</h3>
-    <p ng-repeat="expenditure in ic.transactionArray.list | filter: 'expenditure'">
-      {{expenditure.id}} {{expenditure.date | date : "fullDate"}} {{expenditure.description}} {{expenditure.amount}}
+    <ul ng-repeat="expenditure in ic.transactionArray.list| filter: 'expenditure'">
+      <li>
+        <span ng-hide="editing" ng-click="editing = true">{{expenditure.date | date : "fullDate"}} {{expenditure.description}} {{expenditure.amount}}</span>
+        <form ng-show="editing" ng-submit="editing = false; ic.updateTransaction(expenditure)">
+          <label>Date:</label>
+          <input type="date" ng-model="expenditure.date" placeholder="Date" />
+          <label>Description:</label>
+          <input type="text" ng-model="expenditure.description" placeholder="Description" ng-required/>
+          <label>Amount:</label>
+          <input type="number" ng-model="expenditure.amount" placeholder="Amount" ng-required/>
+          <br/>
+          <button class="btn" type="submit">Save</button>
+        </form>
+
+      </li>
       <button ng-click="ic.deleteTransaction(expenditure.id)">Delete</button>
-    </p>
+    </ul>
     <!-- {{ic.transactionArray.transactionArray}} -->
   </div>
 

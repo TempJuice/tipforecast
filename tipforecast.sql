@@ -8,7 +8,7 @@ CREATE TABLE transactions (
 	id SERIAL PRIMARY KEY,
 	username VARCHAR(25),
 	type VARCHAR(25),
-	date INT,
+	date DATE,
 	description VARCHAR (40),
 	amount INT
 );
@@ -43,7 +43,7 @@ ADD amount INT;
 ALTER TABLE users
 DROP COLUMN amount;
 
-UPDATE users
-SET date = 111, type = 'aaa', amount = 222
-WHERE username = ryan;
+UPDATE transactions
+SET date = 111, description = 'aaa', amount = 222
+WHERE id = ryan;
 

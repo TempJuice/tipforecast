@@ -24,8 +24,8 @@ myApp.service('TransactionService', function ($http, $location) {
     self.updateTransaction = function (updatedTransaction) {
         console.log('Update Transactions function was triggered');
         console.log('updatedTransaction is: ', updatedTransaction);
-        $http.put('/info/' + transactionId).then(function (response) {
-            // console.log('Transactions get route brought back: ', response);
+        $http.put('/info', updatedTransaction).then(function (response) {
+            console.log('Transactions put route brought back: ', response);
             self.getTransactions();
         })//end of update success function
     }//end of updateTransaction function

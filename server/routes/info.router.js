@@ -4,7 +4,7 @@ var pool = require('../modules/pool')
 
 //Inserting new transaction items to DB 
 router.post('/', function (req, res) {
-    // console.log('Info post route was hit server side :', req.body);
+    console.log('Info post route was hit server side :', req.body);
 
     //New object to make query
     // var transactionItem = {
@@ -55,6 +55,31 @@ router.get('/', function (req, res) {
             });//end of error handling for DB query
     });//end of pool.connect   
 });//end of router.get
+
+router.put('/', function (req, res) {
+    console.log('PUT route was hit with: ', req.body);
+    pool.connect(function (errorConnectingToDatabase, client, done) {
+        if (errorConnectingToDatabase) {
+            // when connecting to database failed
+            console.log('Error connecting to database', errorConnectingToDatabase);
+            res.sendStatus(500);
+        } else {
+            // when connecting to database worked!
+            // query like this: UPDATE messages SET message='Have a really terrific day!' WHERE id=1;
+            client.query('UPDATE transactions SET date=$1, description=$2, amount=$3 WHERE id=$4;',
+                [req.body.date, req.body.description, req.body.amount, req.body.id],
+                function (errorMakingQuery, result) {
+                    done();
+                    if (errorMakingQuery) {
+                        console.log('Error making database query', errorMakingQuery);
+                        res.sendStatus(500);
+                    } else {
+                        res.sendStatus(200);
+                    }
+                });
+        }
+    });
+});
 
 router.delete('/:id', function (req, res) {
     console.log('Info delete route was hit server side :');
