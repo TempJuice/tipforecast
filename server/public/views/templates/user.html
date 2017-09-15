@@ -1,6 +1,21 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
 
-    <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
+    <h1 id="welcome" class="lead"><u>Cash Flow Summary For {{uc.userObject.userName}}</u></h1>
+
+<div ng-controller="MaterialController as mc" class="md-padding">
+    <div layout="row" layout-md="column">
+        <div flex class="first-box" >
+            Calendar goes here
+
+        </div>
+        <div flex class="second-box">
+            <u>Cash Available Today : </u></br>
+            <u>Minimum Weekly Income : </u></br>
+            <u>Weekly Expenditures :</u>
+        </div>
+    </div>
+</div>
+
     <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
 </div>

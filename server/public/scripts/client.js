@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ui.calendar']);
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
@@ -31,6 +31,10 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
+    // .when('/logout', {
+    //   templateUrl: '/views/partial/nav.html',
+    //   controller: 'UserController as uc',
+    // })
     .otherwise({
       redirectTo: 'home'
     });

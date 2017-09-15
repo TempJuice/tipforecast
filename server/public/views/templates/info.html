@@ -1,8 +1,8 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
-  <p>
+  <h1><u>
     Cash Flow Items
-  </p>
+  </u></h1>
 
   <form ng-submit="ic.addTransaction(ic.userObject)">
     <select ng-model="ic.userObject.type">
@@ -31,10 +31,10 @@
     <h3>Income Items</h3>
     <ul ng-repeat="income in ic.transactionArray.list| filter: 'income'">
       <li>
-        <span ng-hide="editing" ng-click="editing = true">{{income.date | date : fullDate}} {{income.description}} {{income.amount}}</span>
+        <span ng-hide="editing" ng-click="editing = true">{{income.date | date : "fullDate"}} {{income.description}} {{income.amount}}</span>
         <form ng-show="editing" ng-submit="editing = false; ic.updateTransaction(income)">
           <label>Date:</label>
-          <input type="date" ng-model="income.date" placeholder="Date" />
+          <!-- <input type="date" ng-model="income.date" placeholder="Date" /> -->
           <label>Description:</label>
           <input type="text" ng-model="income.description" placeholder="Description" ng-required/>
           <label>Amount:</label>
@@ -56,7 +56,7 @@
         <span ng-hide="editing" ng-click="editing = true">{{expenditure.date | date : "fullDate"}} {{expenditure.description}} {{expenditure.amount}}</span>
         <form ng-show="editing" ng-submit="editing = false; ic.updateTransaction(expenditure)">
           <label>Date:</label>
-          <input type="date" ng-model="expenditure.date" placeholder="Date" />
+          <!-- <input type="date" ng-model="expenditure.date" placeholder="Date" /> -->
           <label>Description:</label>
           <input type="text" ng-model="expenditure.description" placeholder="Description" ng-required/>
           <label>Amount:</label>
