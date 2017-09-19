@@ -18,7 +18,7 @@ CREATE TABLE transactions (
 	id SERIAL PRIMARY KEY,
 	username VARCHAR(25),
 	type VARCHAR(25),
-	date INT,
+	date VARCHAR,
 	description VARCHAR (40),
 	amount INT
 );

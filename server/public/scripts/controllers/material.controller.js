@@ -24,9 +24,9 @@ myApp.controller('MaterialController', function ($mdDialog, $mdToast) {
     //     }
     // };
 
-    vm.eventSources = [ {
-        title: 'Thing',
-        start: new Date(2017, 9, 9)
-    } ]
+    // vm.eventSources = [ {
+    //     title: 'Thing',
+    //     start: new Date(2017, 9, 9)
+    // } ]
 
 });//end of MaterialController

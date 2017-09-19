@@ -6,9 +6,12 @@ myApp.controller('InfoController', function (UserService, TransactionService) {
   vm.userObject = UserService.userObject
   // console.log('Controller userObject: ', vm.userObject);
   
+  
   vm.transactionArray = TransactionService.transactionsObject;
 
   vm.addTransaction = function (newTransaction) {
+    newTransaction.date = moment(newTransaction.date).format('MM/DD/YYYY');
+    console.log('Date format is: ', newTransaction.date);
     TransactionService.addTransaction(newTransaction);
     // console.log('controller add function hit');   
   }
@@ -23,6 +26,8 @@ myApp.controller('InfoController', function (UserService, TransactionService) {
   vm.deleteTransaction = function (transactionId) {
     TransactionService.deleteTransaction(transactionId);
   }
+
+  
 
   TransactionService.getTransactions();
 

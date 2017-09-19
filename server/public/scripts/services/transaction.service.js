@@ -3,11 +3,16 @@ myApp.service('TransactionService', function ($http, $location) {
 
     self.transactionsObject = { list: [] };
 
+// self.top = moment().format('dddd');
+// self.tom = moment().format('MM/DD/YYYY');
+// console.log( self.tom);
 
     self.getTransactions = function () {
         // console.log('Get Transactions function was triggered');
         $http.get('/info').then(function (response) {
-            // console.log('Transactions get route brought back: ', response);
+            console.log('Transactions get route brought back: ', response.data);
+            // console.log('date format is: ', response.data.date);
+            
             self.transactionsObject.list = response.data;
             // console.log('Transactions Object: ', self.transactionsObject.list);
         })//end of get success function
