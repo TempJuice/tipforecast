@@ -7,16 +7,19 @@
 
     <div ng-controller="MaterialController as mc" class="md-padding">
         <div layout="row" layout-xs="column">
-            
-            <div flex class="first-box" ui-calendar ng-model="eventSources">
+
+            <div flex class="first-box" ui-calendar ng-model="uc.eventSources">
                 Calendar populates once items are added
             </div>
             <div flex class="second-box">
-                <u>Cash Available Today : </u>
+                <p>{{uc.eventSources.events}}</p>
+                
+                 <p>{{uc.dateArray}}</p>
+                <!-- <u>Cash Available Today : </u>
                 </br>
                 <u>Minimum Weekly Income : </u>
                 </br>
-                <u>Weekly Expenditures :</u>
+                <u>Weekly Expenditures :</u> -->
         </div>
         
     </div>

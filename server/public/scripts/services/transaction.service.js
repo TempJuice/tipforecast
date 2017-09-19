@@ -1,7 +1,11 @@
-myApp.service('TransactionService', function ($http, $location) {
+myApp.service('TransactionService', function ($http) {
     var self = this;
 
     self.transactionsObject = { list: [] };
+    self.calendarObjects = {};
+    self.domCalendarObject = { list: []}
+    
+    
 
 // self.top = moment().format('dddd');
 // self.tom = moment().format('MM/DD/YYYY');
@@ -10,13 +14,35 @@ myApp.service('TransactionService', function ($http, $location) {
     self.getTransactions = function () {
         // console.log('Get Transactions function was triggered');
         $http.get('/info').then(function (response) {
-            console.log('Transactions get route brought back: ', response.data);
+            // console.log('Transactions get route brought back: ', response.data);
             // console.log('date format is: ', response.data.date);
+            self.calendarObjects = response.data;
             
             self.transactionsObject.list = response.data;
+            self.changeObjects();
             // console.log('Transactions Object: ', self.transactionsObject.list);
         })//end of get success function
     }//end of getTransactions function
+
+    self.changeObjects = function () {
+        // console.log('calendar objects are: ', self.calendarObjects);
+        for (var i = 0; i < self.calendarObjects.length; i++) {
+            var event = self.calendarObjects[i];
+            // console.log('this is the event', event);
+            dateObject = {};
+            // dateObject.type = event.type;
+            
+            dateObject.title = event.description;
+            dateObject.start = event.date;
+            // console.log('dateObject is: ',dateObject );
+            
+            self.domCalendarObject.list.push(dateObject);
+            // console.log('my array is now: ', self.domCalendarObject.list);
+            
+        }
+
+    }
+    
 
     self.addTransaction = function (newTransaction) {
         console.log('add item function was initiated');
