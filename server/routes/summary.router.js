@@ -22,4 +22,4 @@ var pool = require('../modules/pool')
 //                 }
 //             });//end of error handling for DB query
 //     });//end of pool.connect   
-});//end of router.get
+// });//end of router.get
