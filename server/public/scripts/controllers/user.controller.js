@@ -6,6 +6,7 @@ myApp.controller('UserController', function (UserService, TransactionService) {
 
 
   TransactionService.getTransactions();
+  // TransactionService.changeObjectsForCalendar();
   
 
 
@@ -44,10 +45,10 @@ myApp.controller('UserController', function (UserService, TransactionService) {
 
 
 
-  var date = new Date();
-  var d = date.getDate();
-  var m = date.getMonth();
-  var y = date.getFullYear();
+  // var date = new Date();
+  // var d = date.getDate();
+  // var m = date.getMonth();
+  // var y = date.getFullYear();
 
   // vm.eventSources = {
   //   events: [
