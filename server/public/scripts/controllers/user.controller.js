@@ -5,16 +5,18 @@ myApp.controller('UserController', function (UserService, TransactionService) {
   vm.userObject = UserService.userObject;
 
 
-  TransactionService.getTransactions();
+  // TransactionService.getTransactions();
   // TransactionService.changeObjectsForCalendar();
-  
+  TransactionService.getMath();
+  // TransactionService.getCalendar();
 
 
+  vm.mathObject = TransactionService.mathObject;
 
   vm.transactionArray = TransactionService.transactionsObject
 
- vm.dateArray = TransactionService.domCalendarObject.list;
-  console.log( 'Array coming into controller: ', vm.dateArray);
+  vm.dateArray = TransactionService.domCalendarObject.list;
+  // console.log( 'Array coming into controller: ', vm.dateArray);
 
   // objects come in like: {
   //   username: 'ryan',
@@ -32,9 +34,9 @@ myApp.controller('UserController', function (UserService, TransactionService) {
   //   for (var i = 0; i < vm.transactionArray.list.length; i++) {
   //     var event = vm.transactionArray.list[i];
   //     console.log('this is the event', event);
-      
+
   //     // event.title = transactionArray.list.description
-      
+
   //   }
 
   // }
@@ -53,7 +55,7 @@ myApp.controller('UserController', function (UserService, TransactionService) {
   // vm.eventSources = {
   //   events: [
   //     { title: 'Big Event', start: new Date(y, m, 1) },
-     
+
   //   ]
   // };
 
@@ -61,13 +63,13 @@ myApp.controller('UserController', function (UserService, TransactionService) {
   vm.eventSources = [{
     events: vm.dateArray
   }];
-  console.log('Array after being applied to calendar source: ', vm.dateArray);
+  // console.log('Array after being applied to calendar source: ', vm.dateArray);
 
 
   // vm.eventSources = {
   //   events: [{"title":"bar","start":"2017-09-19T05:00:00.000Z"},{"title":"serve","start":"2017-09-21T05:00:00.000Z"},{"title":"bar","start":"2017-09-26T05:00:00.000Z"},{"title":"Car payment","start":"2017-09-23T05:00:00.000Z"}]
   // };
-  
+
 
   // { title: 'All Day Event', start: new Date(y, m, 1) },
   // { title: 'Long Event', start: new Date(y, m, d - 5), end: new Date(y, m, d - 2) },

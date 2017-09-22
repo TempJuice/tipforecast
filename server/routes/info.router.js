@@ -57,6 +57,50 @@ router.get('/', function (req, res) {
     });//end of pool.connect   
 });//end of router.get
 
+router.get('/math', function (req, res) {
+    // console.log('Math get route was hit server side :');
+    // console.log('math user is: ', req.user);
+    pool.connect(function (err, client, done) {
+        if (err) {
+            console.log("Error connecting: ", err);
+            res.sendStatus(500);
+        }
+        client.query("SELECT type, amount FROM transactions WHERE username = $1;",
+            [req.user.username],
+            function (err, result) {
+                done();
+                if (err) {
+                    console.log("Error selecting data: ", err);
+                    res.sendStatus(500);
+                } else {
+                    res.send(result.rows);
+                }
+            });//end of error handling for DB query
+    });//end of pool.connect   
+});//end of router.get/math
+
+router.get('/calendar', function (req, res) {
+    // console.log('Math get route was hit server side :');
+    // console.log('math user is: ', req.user);
+    pool.connect(function (err, client, done) {
+        if (err) {
+            console.log("Error connecting: ", err);
+            res.sendStatus(500);
+        }
+        client.query("SELECT date, description FROM transactions WHERE username = $1;",
+            [req.user.username],
+            function (err, result) {
+                done();
+                if (err) {
+                    console.log("Error selecting data: ", err);
+                    res.sendStatus(500);
+                } else {
+                    res.send(result.rows);
+                }
+            });//end of error handling for DB query
+    });//end of pool.connect   
+});//end of router.get/math
+
 router.put('/', function (req, res) {
     console.log('PUT route was hit with: ', req.body);
     pool.connect(function (errorConnectingToDatabase, client, done) {
