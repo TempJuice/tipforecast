@@ -29,8 +29,7 @@
   </form>
   {{ic.userObject.date}}
 
-  <div ng-cloak layout-gt-sm="row" layout="column">
-
+  <div ng-cloak layout-gt-sm="row">
     <div flex-gt-sm="50" flex>
 
       <md-toolbar layout="row" class="md-hue-8">
@@ -41,23 +40,12 @@
 
       <md-content>
         <md-list class="md-dense" flex>
-          <md-list-item  class="md-3-line" ng-repeat="income in ic.transactionArray.list| filter: 'income'"  >
-            <form ng-show="editing" ng-submit="ic.updateTransaction(income)">
-              <label>Date:</label>
-              <input type="date" ng-model="income.date" placeholder="Date" />
-              <label>Description:</label>
-              <input type="text" ng-model="income.description" placeholder="Description" ng-required/>
-              <label>Amount:</label>
-              <input type="number" ng-model="income.amount" placeholder="Amount" ng-required/>
-              <br/>
-              <button class="btn" type="submit">Save</button>
-            </form>
+          <md-list-item class="md-3-line" ng-repeat="income in ic.transactionArray.list| filter: 'income'">
             <div class="md-list-item-text" layout="column" ng-click="editing = true">
               <h3>{{income.date | date : "fullDate"}}</h3>
               <h4>{{income.description}}</h4>
               <p>{{income.amount | currency}}</p>
-              <!-- <span ng-hide="editing" ng-click="editing = true">{{income.date | date : "fullDate"}} {{income.description}} {{income.amount}}</span> -->
-              <!-- <form ng-show="editing" ng-submit="editing = false; ic.updateTransaction(income)">
+              <form ng-show="editing" ng-submit="ic.updateTransaction(income)">
                 <label>Date:</label>
                 <input type="date" ng-model="income.date" placeholder="Date" />
                 <label>Description:</label>
@@ -66,32 +54,13 @@
                 <input type="number" ng-model="income.amount" placeholder="Amount" ng-required/>
                 <br/>
                 <button class="btn" type="submit">Save</button>
-              </form> -->
+              </form>
             </div>
           </md-list-item>
+        </md-list>
+      </md-content>
     </div>
 
-    <!-- <div layout="row">
-    <div flex class="first-box">
-      <h3>Income Items</h3>
-      <ul ng-repeat="income in ic.transactionArray.list| filter: 'income'">
-        <li>
-          <span ng-hide="editing" ng-click="editing = true">{{income.date | date : "fullDate"}} {{income.description}} {{income.amount}}</span>
-          <form ng-show="editing" ng-submit="editing = false; ic.updateTransaction(income)">
-            <label>Date:</label>
-            <input type="date" ng-model="income.date" placeholder="Date" />
-            <label>Description:</label>
-            <input type="text" ng-model="income.description" placeholder="Description" ng-required/>
-            <label>Amount:</label>
-            <input type="number" ng-model="income.amount" placeholder="Amount" ng-required/>
-            <br/>
-            <button class="btn" type="submit">Save</button>
-          </form>
-
-        </li>
-        <button ng-click="ic.deleteTransaction(income.id)">Delete</button>
-      </ul>
-    </div> -->
 
     <div flex-gt-sm="50" flex>
 
@@ -102,22 +71,14 @@
       </md-toolbar>
 
 
-
-      <md-list class="md-dense" flex>
-        
-        <md-list-item class="md-3-line" ng-repeat="expenditure in ic.transactionArray.list| filter: 'expenditure'">
-          <div class="md-list-item-text" layout="column">
-            <h3>{{expenditure.date | date : "fullDate"}}</h3>
-            <h4>{{expenditure.description}}</h4>
-            <p>{{expenditure.amount | currency}}</p>
-          </div>
-        </md-list-item>
-        <!-- <div flex class="second-box">
-          <h3>Expenditure Items</h3>
-          <ul ng-repeat="expenditure in ic.transactionArray.list| filter: 'expenditure'">
-            <li>
-              <span ng-hide="editing" ng-click="editing = true">{{expenditure.date | date : "fullDate"}} {{expenditure.description}} {{expenditure.amount}}</span>
-              <form ng-show="editing" ng-submit="editing = false; ic.updateTransaction(expenditure)">
+      <md-content>
+        <md-list class="md-dense" flex>
+          <md-list-item class="md-3-line" ng-repeat="expenditure in ic.transactionArray.list| filter: 'expenditure'">
+            <div class="md-list-item-text" layout="column" ng-click="editing = true">
+              <h3>{{expenditure.date | date : "fullDate"}}</h3>
+              <h4>{{expenditure.description}}</h4>
+              <p>{{expenditure.amount | currency}}</p>
+              <form ng-show="editing" ng-submit="ic.updateTransaction(expenditure)">
                 <label>Date:</label>
                 <input type="date" ng-model="expenditure.date" placeholder="Date" />
                 <label>Description:</label>
@@ -127,15 +88,10 @@
                 <br/>
                 <button class="btn" type="submit">Save</button>
               </form>
+            </div>
+          </md-list-item>
 
-            </li>
-            <button ng-click="ic.deleteTransaction(expenditure.id)">Delete</button>
-          </ul>
-          
-        </div> -->
-
-        
-        </md-content>
+      </md-content>
 
     </div>
 

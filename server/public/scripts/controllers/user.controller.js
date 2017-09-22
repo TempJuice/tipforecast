@@ -6,6 +6,9 @@ myApp.controller('UserController', function (UserService, TransactionService) {
 
 
   TransactionService.getTransactions();
+  
+
+
 
   vm.transactionArray = TransactionService.transactionsObject
 
@@ -54,10 +57,11 @@ myApp.controller('UserController', function (UserService, TransactionService) {
   // };
 
 
-  vm.eventSources = {
+  vm.eventSources = [{
     events: vm.dateArray
-  };
+  }];
   console.log('Array after being applied to calendar source: ', vm.dateArray);
+
 
   // vm.eventSources = {
   //   events: [{"title":"bar","start":"2017-09-19T05:00:00.000Z"},{"title":"serve","start":"2017-09-21T05:00:00.000Z"},{"title":"bar","start":"2017-09-26T05:00:00.000Z"},{"title":"Car payment","start":"2017-09-23T05:00:00.000Z"}]
