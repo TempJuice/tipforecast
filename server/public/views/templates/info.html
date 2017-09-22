@@ -45,6 +45,7 @@
               <h3>{{income.date | date : "fullDate"}}</h3>
               <h4>{{income.description}}</h4>
               <p>{{income.amount | currency}}</p>
+              <button class="btn" ng-click="ic.deleteTransaction(income.id)">Delete</button>
               <form ng-show="editing" ng-submit="ic.updateTransaction(income)">
                 <label>Date:</label>
                 <input type="date" ng-model="income.date" placeholder="Date" />
@@ -78,6 +79,7 @@
               <h3>{{expenditure.date | date : "fullDate"}}</h3>
               <h4>{{expenditure.description}}</h4>
               <p>{{expenditure.amount | currency}}</p>
+              <button class="btn" ng-click="ic.deleteTransaction(expenditure.id)">Delete</button>
               <form ng-show="editing" ng-submit="ic.updateTransaction(expenditure)">
                 <label>Date:</label>
                 <input type="date" ng-model="expenditure.date" placeholder="Date" />

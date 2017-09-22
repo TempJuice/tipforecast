@@ -24,6 +24,7 @@ myApp.controller('UserController', function (UserService, TransactionService, $h
         dateObject = {};
         dateObject.title = event.description;
         dateObject.start = event.date;
+        dateObject.allDay = true;
         vm.domCalendarObject.list.push(dateObject);
       }
       console.log('domObject is now: ', vm.domCalendarObject.list);

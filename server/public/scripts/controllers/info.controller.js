@@ -8,6 +8,8 @@ myApp.controller('InfoController', function (UserService, TransactionService) {
   
   
   vm.transactionArray = TransactionService.transactionsObject;
+    console.log('Transaction objeccts are: ', vm.transactionArray);
+
 
   vm.addTransaction = function (newTransaction) {
     newTransaction.date = moment(newTransaction.date).format('MM/DD/YYYY');

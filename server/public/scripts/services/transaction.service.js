@@ -15,47 +15,12 @@ myApp.service('TransactionService', function ($http) {
     self.getTransactions = function () {
         // console.log('Get Transactions function was triggered');
         $http.get('/info').then(function (response) {
-            console.log('Transactions get route brought back: ', response.data);
+            // console.log('Transactions get route brought back: ', response.data);
             // console.log('date format is: ', response.data);
             self.transactionsObject.list = response.data;
         })
     };//end of getTransactions function
 
-
-    // self.getMath = function () {
-    //     // console.log('Get math function was triggered');
-    //     $http.get('/info/math').then(function (response) {
-    //         // console.log('Math get route brought back: ', response.data);
-    //         for (var i = 0; i < response.data.length; i++) {
-    //             var math = response.data[i];
-    //             if (math.type === 'income') {
-    //                 self.mathObject.incomeTotal += math.amount
-    //             } else {
-    //                 self.mathObject.expTotal -= math.amount
-    //             } 
-    //             // console.log('mathObject is now: ', self.mathObject);                
-    //         }
-    //         self.mathObject.total = self.mathObject.incomeTotal + self.mathObject.expTotal;
-    //         // console.log('mathObject.total is: ', self.mathObject.total);
-            
-    //     })
-    // };
-
-    // self.getCalendar = function () {
-    //     // console.log('Get math function was triggered');
-    //     $http.get('/info/calendar').then(function (response) {
-    //         console.log('Calendar get route brought back: ', response.data);
-    //         for (var i = 0; i < response.data.length; i++) {
-    //             var event = response.data[i];
-    //             dateObject = {};
-    //             dateObject.title = event.description;
-    //             dateObject.start = event.date;
-    //             self.domCalendarObject.list.push(dateObject);  
-    //         }
-    //         console.log('domObject is now: ', self.domCalendarObject.list);
-    //     })
-    // };
-    // self.getCalendar();
 
     self.addTransaction = function (newTransaction) {
         console.log('add item function was initiated');
