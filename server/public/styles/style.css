@@ -73,6 +73,10 @@ li a {
   text-decoration: none;
 }
 
+.fc-toolbar {
+  background-color: red;
+}
+
 .list-items {
   display: flex;
   justify-content: center;

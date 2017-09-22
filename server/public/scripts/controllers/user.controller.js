@@ -36,17 +36,42 @@ myApp.controller('UserController', function (UserService, TransactionService, $h
 
 
 
-
+  var date = new Date();
+  var d = date.getDate();
+  var m = date.getMonth();
+  var y = date.getFullYear();
+  var currentView = "month";
   // Sample moment.js commands
   // var date = new Date();
   // var d = date.getDate();
   // var m = date.getMonth();
   // var y = date.getFullYear();
-
+  vm.uiConfig = {
+    calendar: {
+      height: 450,
+      editable: true,
+      header: {
+        left: '',
+        center: 'title',
+        right: 'today prev,next'
+      },
+      themeSystem: 'jquery-ui',
+      dayClick: vm.dayClick,
+      eventDrop: vm.alertOnDrop,
+      eventResize: vm.alertOnResize,
+      eventClick: vm.eventClick,
+      viewRender: vm.renderView
+    }
+  };
 
   vm.eventSources = [{
+
     events: vm.dateArray
   }];
+
+
+
+  
 
   //Calendar input examples
   // { title: 'All Day Event', start: new Date(y, m, 1) },

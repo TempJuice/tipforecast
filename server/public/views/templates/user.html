@@ -8,7 +8,7 @@
     <div ng-controller="MaterialController as mc" class="md-padding">
         <div layout="row" layout-align="column">
 
-            <div flex class="first-box" ui-calendar ng-model="uc.eventSources">
+            <div flex class="first-box" ui-calendar="uc.uiConfig.calendar" ng-model="uc.eventSources">
                 Calendar populates once items are added
             </div>
             <div flex class="second-box">
