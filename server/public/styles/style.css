@@ -76,12 +76,16 @@ li a {
 .list-items {
   display: flex;
   justify-content: center;
-  color: red;
+  color: black;
 }
 
 .md-toolbar-tools {
   display: flex;
   justify-content: center;
+}
+
+.md-button.md-raised:not([disabled]) {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 /* Change the link color to #111 (black) on hover */

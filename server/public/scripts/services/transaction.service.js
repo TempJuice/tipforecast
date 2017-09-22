@@ -25,8 +25,7 @@ myApp.service('TransactionService', function ($http) {
     self.addTransaction = function (newTransaction) {
         console.log('add item function was initiated');
         $http.post('/info', newTransaction).then(function (response) {
-            self.getTransactions();
-            
+            self.getTransactions();      
         })//end of post success function      
     }//end of additem function
 
@@ -45,8 +44,7 @@ myApp.service('TransactionService', function ($http) {
         // console.log('transactionId is: ', transactionId);
         $http.delete('/info/' + transactionId).then(function (response) {
             // console.log('Transactions get route brought back: ', response);
-            self.getTransactions();
-           
+            self.getTransactions();      
         })//end of delete success function
     }//end of deleteTransaction function
 
