@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ui.calendar']);
 
 /// Routes ///
-myApp.config(function($routeProvider, $locationProvider) {
+myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
   $locationProvider.hashPrefix('');
   // console.log('myApp -- config');
   $routeProvider
@@ -38,4 +38,9 @@ myApp.config(function($routeProvider, $locationProvider) {
     .otherwise({
       redirectTo: 'home'
     });
+
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue')
+      .accentPalette('red');
+
 });

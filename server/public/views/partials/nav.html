@@ -1,9 +1,14 @@
-<div class="navbar">
+<!-- <div class="navbar">
   <div class="container">
     <ul>
       <li><a href="#/user">Cash Flow Summary</a></li>
-      <li><a href="#/info">Cash Flow Items</a></li>
+      <li><a href="#/info">Cash Flow Items</a></li> -->
       <!-- <li><a href="#/logout">Logout</a></li> -->
-    </ul>
+    <!-- </ul>
   </div>
-</div>
+</div> -->
+
+<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" md-is-locked-open="$mdMedia('gt-sm')">
+  <md-nav-item md-nav-href="#/user" name="page5">Cash Flow Summary</md-nav-item>
+  <md-nav-item md-nav-href="#/info" name="page5">Cash Flow Items</md-nav-item>
+</md-nav-bar>

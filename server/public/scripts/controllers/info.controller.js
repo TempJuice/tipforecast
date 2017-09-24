@@ -29,8 +29,6 @@ myApp.controller('InfoController', function (UserService, TransactionService) {
     TransactionService.deleteTransaction(transactionId);
   }
 
-  
-
   TransactionService.getTransactions();
 
 

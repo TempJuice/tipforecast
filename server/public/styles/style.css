@@ -48,12 +48,6 @@ body, html {
   margin-left: 10px;
 }
 
-.navbar {
-  background-color: #333333;
-  width: 100%;
-  border-radius: 0px;
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -96,4 +90,8 @@ li a {
 li a:hover {
   text-decoration: underline;
   color: #111;
+}
+
+md-list .md-list-item-text.selected {
+  color: grey;
 }
