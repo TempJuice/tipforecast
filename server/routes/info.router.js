@@ -15,7 +15,7 @@ router.post('/', function (req, res) {
     //     amount: req.body.amount
     // };
     pool.connect(function (err, client, done) {
-        console.log('jelly donut', req.user.id);
+        
         if (err) {
             console.log("Error connecting: ", err);
             res.sendStatus(500);
