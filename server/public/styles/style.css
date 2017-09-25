@@ -1,17 +1,18 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
 }
 
 .instructions .container h1 {
+  font-family: 'Abril Fatface', cursive;
   font-size: 32px;
   font-weight: 600;
 }
 
 .instructions {
-  background-color: #333333;
+  background-color: #479DDF;
   color: #DDDDDD;
   padding: 15px;
 }
@@ -68,7 +69,8 @@ li a {
 }
 
 .fc-toolbar {
-  background-color: red;
+  background-color: #479DDF;
+  text-decoration-color: white;
 }
 
 .list-items {
@@ -80,10 +82,14 @@ li a {
 .md-toolbar-tools {
   display: flex;
   justify-content: center;
+  color: black;
+
 }
 
 .md-button.md-raised:not([disabled]) {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    border-style: solid;
+    border-width: 1px;
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -95,3 +101,16 @@ li a:hover {
 md-list .md-list-item-text.selected {
   color: grey;
 }
+
+.numbers {
+  color: #479DDF;
+  font-size: 25px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#cash {
+  font-size: 18px;
+  background-color: grey;
+}
+
+

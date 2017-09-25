@@ -87,7 +87,7 @@ router.get('/calendar', function (req, res) {
             console.log("Error connecting: ", err);
             res.sendStatus(500);
         }
-        client.query("SELECT date, description FROM transactions WHERE username = $1;",
+        client.query("SELECT date, description, amount FROM transactions WHERE username = $1;",
             [req.user.username],
             function (err, result) {
                 done();

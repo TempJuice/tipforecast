@@ -12,23 +12,23 @@
         <div flex="50" layout = "column">
             <md-toolbar flex="20">
                 <div class="md-toolbar-tools" >
-                    <span>Monthly Cash Flow Summary</span>
+                    <span class="yup">Monthly Cash Flow Summary</span>
                 </div>
             </md-toolbar>
 
 
             <md-card >
-                <div class=" md-toolbar-tools" layout="row">
+                <div class=" md-toolbar-tools" layout="row" flex>
                     <md-card-content>
-                        <u>Total Cash Made :</u> {{uc.mathObject.total}}</md-card-content>
+                        <u>Total Cash Available :</u> <strong class="numbers">{{uc.mathObject.total}}</strong></md-card-content>
                     <md-card-content>
-                        <u>Total Monthly Income :</u> {{uc.mathObject.incomeTotal}}</md-card-content>
+                        <u>Total Monthly Income :</u> <strong class="numbers">{{uc.mathObject.incomeTotal}}</strong></md-card-content>
                     <md-card-content>
-                        <u>Total Monthly Expenditures :</u> {{uc.mathObject.expTotal}}</md-card-content>
+                        <u>Total Monthly Expenditures:</u> <strong class="numbers">{{uc.mathObject.expTotal}}</strong></md-card-content>
                 </div>
             </md-card>
 
         </div>
     </div>
-    <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
+    
 </div>

@@ -30,11 +30,13 @@ myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
           return UserService.getuser();
         }
       }
-    })
-    // .when('/logout', {
-    //   templateUrl: '/views/partial/nav.html',
-    //   controller: 'UserController as uc',
-    // })
+    }).when('/logout', {
+      resolve: {
+        logout: function (UserService) {
+          return UserService.logout();
+        }
+    }
+  })
     .otherwise({
       redirectTo: 'home'
     });

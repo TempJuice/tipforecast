@@ -1,8 +1,8 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
 
-<md-toolbar>
-  <div class="md-toolbar-tools">
+<md-toolbar id = "cash">
+  <div class="md-toolbar-tools" >
     <span><u>Add a Cash Flow Item</u></span>
   </div>
   <form ng-submit="ic.addTransaction(ic.userObject)" layout-gt-sm="row">
@@ -26,7 +26,7 @@
       <input type="number" ng-model="ic.userObject.amount" />
     </div>
     <div>
-      <md-button class="raised" type="submit">Add</button>
+      <md-button class="md-raised" type="submit">Add</button>
     </div>
   </form>
 </md-toolbar>
@@ -40,18 +40,18 @@
   <div flex-gt-sm="50">
 
     <md-toolbar>
-      <div class="md-toolbar-tools">
-        <span>Income Items</span>
+      <div class="md-toolbar-tools" id="income">
+        <strong><u>Income Items</u></strong>
       </div>
     </md-toolbar>
 
     <md-content>
       <md-card class="md-dense" ng-repeat="income in ic.transactionArray.list| filter: 'income' | orderBy: 'date'">
-        <md-card-content ng-click="editing = true" style="line-height:5px">
-          <h3>{{income.date | date : "fullDate"}}</h3>
+        <md-card-content ng-click="editing = true" style="line-height:2px">
+          <h3>{{income.date | date : "shortDate"}}</h3>
           <h4>{{income.description}}</h4>
           <p>{{income.amount | currency}}</p>
-          <md-button class="raised" ng-click="ic.deleteTransaction(income.id)">Delete</md-button>
+          <md-button class="md-raised" ng-click="ic.deleteTransaction(income.id)">Delete</md-button>
           <form ng-show="editing" ng-submit="ic.updateTransaction(income)">
             <label>Date:</label>
             <input type="date" ng-model="income.date" placeholder="Date" />
@@ -60,7 +60,7 @@
             <label>Amount:</label>
             <input type="number" ng-model="income.amount" placeholder="Amount" ng-required/>
             <br/>
-            <md-button class="raised" type="submit">Save</button>
+            <md-button class="md-raised" type="submit">Save</button>
           </form>
         </md-card-content>
       </md-card>
@@ -73,18 +73,18 @@
 
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <span>Expenditure Items</span>
+        <strong><u>Expenditure Items</u></strong>
       </div>
     </md-toolbar>
 
 
     <md-content>
       <md-card class="md-dense" ng-repeat="expenditure in ic.transactionArray.list| filter: 'expenditure' | orderBy: 'date'">
-        <md-card-content ng-click="editing = true" style="line-height:5px">
-          <h3>{{expenditure.date | date : "fullDate"}}</h3>
+        <md-card-content ng-click="editing = true" style="line-height:2px">
+          <h3>{{expenditure.date | date : "shortDate"}}</h3>
           <h4>{{expenditure.description}}</h4>
           <p>{{expenditure.amount | currency}}</p>
-          <md-button class="raised" ng-click="ic.deleteTransaction(expenditure.id)">Delete</md-button>
+          <md-button class="md-raised" ng-click="ic.deleteTransaction(expenditure.id)">Delete</md-button>
           <form ng-show="editing" ng-submit="ic.updateTransaction(expenditure)">
             <label>Date:</label>
             <input type="date" ng-model="expenditure.date" placeholder="Date" />
@@ -93,7 +93,7 @@
             <label>Amount:</label>
             <input type="number" ng-model="expenditure.amount" placeholder="Amount" ng-required/>
             <br/>
-            <md-button class="raised" type="submit">Save</button>
+            <md-button class="md-raised" type="submit">Save</button>
           </form>
         </md-card-content>
 
