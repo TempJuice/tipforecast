@@ -1,4 +1,4 @@
-myApp.controller('InfoController', function (UserService, TransactionService) {
+myApp.controller('InfoController', function (UserService, TransactionService, $mdToast) {
   console.log('InfoController created');
   var vm = this;
 
@@ -30,6 +30,8 @@ myApp.controller('InfoController', function (UserService, TransactionService) {
   }
 
   TransactionService.getTransactions();
+
+
 
 
 
