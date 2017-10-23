@@ -2,15 +2,21 @@
 
 TipForecast is the culmination of the skills I acquired as a Prime Digital Academy graduate. A final display/evaluation of me applying what I learned over 12 weeks of drinking code material from a educational fire hydrant :bowtie:
 
-Link to the live version of the app if it's hosted on Heroku.
+https://boiling-sierra-99917.herokuapp.com/#/info
 
 ## Built With
 
-List technologies and frameworks here
+HTML 5
+CSS 3
+AngularJS
+Node
+Express
+PG
+PostgreSQL
+UI Calendar
+Moment.js
+Angular Material
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
